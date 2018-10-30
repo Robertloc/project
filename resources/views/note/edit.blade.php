@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-	<h1>Create new note</h1>
+	<h1>Edit note</h1>
 
-	<form action="{{ action('NoteController@store') }}" method="post">
+	<form action="{{ action('NoteController@update', $noteversions->id) }}" method="post">
 
 	 @csrf
 
@@ -21,7 +21,7 @@
 
 
 		<div class="form-group">
-			<button type="submit">Create Note</button>
+			<button type="submit">Edit Note</button>
 		</div>
 
 	
