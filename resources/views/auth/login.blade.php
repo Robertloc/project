@@ -1,14 +1,14 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+@extends('layouts.layout')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                <h1 class="card-header">{{ __('Start Collaborating') }}</h1><br>
+                    <form method="POST" action="{{ route('login') }}"><br>
                         @csrf
 
                         <div class="form-group row">
@@ -23,7 +23,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> <br>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -49,13 +49,13 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
-                                </button>
+                                </button><br>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
