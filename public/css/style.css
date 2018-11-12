@@ -38,7 +38,7 @@ nav a:hover {
   text-align: center;
 }
 
-h1.login{
+h2.login{
   font-size: 1.25em;
   font-style: italic;
   text-align: center;
@@ -54,6 +54,12 @@ div.card-big-body {
 
 form {
   padding: 1em;
+}
+
+.invalid-feedback {
+  display: flex;
+  font-size: .5em;
+  color: red;
 }
 
 
