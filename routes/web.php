@@ -21,7 +21,7 @@ Route::get('/note/create', 'NoteController@create');
 
 Route::post('/note/store', 'NoteController@store');
 
-//Route::get('/about');
+Route::get('/about', 'AboutController@index');
 
 Route::post('/note/create', 'NoteController@store');
 
