@@ -38,14 +38,18 @@ nav a:hover {
   text-align: center;
 }
 
-h1.card-header {
-  font-size: 1.5em;
+h1.login{
+  font-size: 1.25em;
   font-style: italic;
   text-align: center;
 }
 
 div.card-body {
   padding: .5em;
+}
+
+div.card-big-body {
+  border: none;
 }
 
 form {

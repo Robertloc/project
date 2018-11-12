@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                <h1 class="card-header">{{ __('Start Collaborating') }}</h1><br>
+                <h1 class="login">{{ __('Start Collaborating') }}</h1><br>
                     <form method="POST" action="{{ route('login') }}"><br>
                         @csrf
 
