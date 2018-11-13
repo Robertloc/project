@@ -36,6 +36,7 @@ nav a:hover {
   padding: 1.25em;
   background-color: transparent;
   text-align: center;
+  border-radius: 25px;
 }
 
 h2.login{
@@ -48,10 +49,6 @@ div.card-body {
   padding: .5em;
 }
 
-div.card-big-body {
-  border: none;
-}
-
 form {
   padding: 1em;
 }
@@ -60,6 +57,19 @@ form {
   display: flex;
   font-size: .5em;
   color: red;
+}
+
+.card-small {
+  display: flex;
+  justify-content: center;
+}
+
+.card-about {
+  padding: 4em;
+  margin: .5em;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 

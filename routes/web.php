@@ -17,11 +17,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/about', 'AboutController@index')->name('about');
+
 Route::get('/note/create', 'NoteController@create');
 
 Route::post('/note/store', 'NoteController@store');
-
-Route::get('/about', 'AboutController@index');
 
 Route::post('/note/create', 'NoteController@store');
 
@@ -33,10 +33,11 @@ Route::get('/note/{id}/edit', 'NoteController@edit');
 
 Route::post('/note/{id}/update', 'NoteController@update');
 
-
+Route::get('/project/create', 'ProjectController@create');
 
 
 Route::get('/project/create', 'ProjectController@create');
+
 Route::post('/project/create', 'ProjectController@store');
 
 Route::get('/project/show', 'ProjectController@show');
