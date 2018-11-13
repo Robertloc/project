@@ -8,7 +8,7 @@
 
 	 @csrf
 
-
+	<div class="container">
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input type="text" name="name" class="form-control">
@@ -24,6 +24,7 @@
 		<div class="form-group">
 			<button type="submit">Create Note</button>
 		</div>
+	</div>
 
 	
 
