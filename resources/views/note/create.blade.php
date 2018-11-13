@@ -2,29 +2,35 @@
 @extends('layouts.layout')
 
 @section('content')
-	<h1>Create new note</h1>
-
-	<form action="{{ action('NoteController@store') }}" method="post">
-
-	 @csrf
-
 	<div class="container">
-		<div class="form-group">
-			<label for="name">Name</label>
-			<input type="text" name="name" class="form-control">
-		</div>
+			<div class="row justify-content-center">
+					<div class="col-md-8">
+							<div class="card">
+									<div class="card-body">
+											<h2>create new note</h2>
+
+											<form action="{{ action('NoteController@store') }}" method="post">
+										
+											 @csrf
+											<div class="form-group">
+												<label for="name">Name</label><br>
+												<input type="text" name="name" class="form-control">
+											</div>
 
 
-	    <div class="form-group">
-			<label for="text">Text</label>
-			<input type="text" name="text" class="form-control">
-		</div>
+												<div class="form-group">
+												<label for="text">Text</label><br>
+												<input type="textarea" name="text" class="form-control">
+											</div>
 
 
-		<div class="form-group">
-			<button type="submit">Create Note</button>
-		</div>
-	</div>
+											<div class="form-group">
+												<br><button type="submit">Create Note</button>
+											</div>
+									</div>
+							</div>
+					</div>
+				</div>
 
 	
 
