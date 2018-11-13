@@ -14,15 +14,7 @@ nav {
 }
 
 nav a {
-  color: #1C90F6;
   padding-bottom: .25em;
-  text-decoration: none;
-  transition: color 1s ease-in-out;
-}
-
-nav a:hover {
-  color: white;
-  transition: color 1s ease-in-out;
 }
 
 .card {
@@ -80,4 +72,28 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+button {
+  background-color:#1C90F6;
+  color: white;
+  border-radius: 25px;
+  width: 75%;
+  transition: all 1s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.25);
+  transition: all 1s ease-in-out;
+}
+
+a:-webkit-any-link {
+  color: #1C90F6;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+}
+
+a:-webkit-any-link:hover {
+  color: white;
+  transition: all 1s ease-in-out;
 }
