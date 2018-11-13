@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/about', 'AboutController@index')->name('about');
+Route::view('/about', 'about');
 
 Route::get('/note/create', 'NoteController@create');
 
