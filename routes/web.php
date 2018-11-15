@@ -33,11 +33,7 @@ Route::get('/project/create', 'ProjectController@create');
 
 Route::post('/project/create', 'ProjectController@store');
 
-
-
 Route::get('/project', 'ProjectController@index');
-
-
 
 Route::get('/project/{id}', 'ProjectController@show');
 
@@ -50,5 +46,7 @@ Route::post('/project/{id}/update', 'ProjectController@update');
 Route::get('/project/{id}/note/create', 'NoteController@create');
 
 Route::post('/project/{id}/note/store', 'NoteController@store');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
