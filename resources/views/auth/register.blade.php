@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" >
                                     {{ __('Register') }}
                                 </button>
                         </div>
