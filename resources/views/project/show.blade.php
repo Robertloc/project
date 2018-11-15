@@ -4,9 +4,13 @@
 @section('content')
 
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md">
         <a href="{{ action('ProjectController@create')}}">
           Create project
       </a>
+      </div>
+  </div>
 </div>
 @foreach($projects as $project)
 

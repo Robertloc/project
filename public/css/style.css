@@ -7,20 +7,41 @@ html {
   font-size: 16px;
 }
 
-nav {
+.container {
   display: flex;
-  justify-content: space-around;
-  margin: 2em;
+  justify-content: center;
+  align-content: center;
 }
 
-nav a {
-  padding-bottom: .25em;
+.navbar {
+  padding: 3em 0;
+}
+
+.navbar-light .navbar-brand {
+  color: #1C90F6;
+  font-weight: 700;
+  padding: 0 2em;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: white;
+  font-weight: 700;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #1C90F6;
+  font-weight: 500;
+  padding: 0 2em;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  font-weight: 500;
 }
 
 .card {
   display: flex;
   justify-content: center;
-  align-items: baseline;
   margin: 0 auto;
   border: 5px solid #1C90F6;
   width: 300px;
@@ -31,14 +52,24 @@ nav a {
   border-radius: 25px;
 }
 
+.row {
+  display: block;
+}
+
+form {
+  margin: 0 auto;
+}
+
 h2{
   font-size: 1.5em;
-  font-style: italic;
+  font-style: oblique;
   text-align: center;
 }
 
 h3 {
-  font-style: italic;
+  font-size: 1.25em;
+  font-weight: 700;
+  font-style: oblique;
 }
 
 form {
@@ -59,7 +90,6 @@ form {
 .card-about {
   padding: 4em;
   margin: .5em;
-  /* display: flex; */
   flex-flow: column;
   justify-content: center;
 }
@@ -97,4 +127,5 @@ a:-webkit-any-link {
 a:-webkit-any-link:hover {
   color: white;
   transition: all 1s ease-in-out;
+  text-decoration: none;
 }

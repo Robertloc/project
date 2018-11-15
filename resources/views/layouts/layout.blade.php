@@ -14,22 +14,46 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="/home"><i class="fas fa-home"></i>Home</a>
-        <a href="/about"><i class="fas fa-question"></i>About/FAQ</a>
-        @guest
-            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>Login</a>
-            <a href="{{ route('register') }}"><i class="fas fa-door-open"></i>Register</a>
-            <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i>Invite</a>
-        @else
-            <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i>Invite</a>
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>Logout</a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none">
-                @csrf
-            </form>
-        @endguest
-    </nav>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand">Collaborate</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About/FAQ</a>
+                        </li>
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Invite</a>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">Invite</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"></i>Logout</a>
+                        <li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none">
+                            @csrf
+                            </form>
+                        </li>
+                        @endguest
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     @yield('content')
   
