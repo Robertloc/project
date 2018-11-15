@@ -19,11 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/about', 'about');
 
-Route::get('/note/create', 'NoteController@create');
 
-Route::post('/note/store', 'NoteController@store');
-
-Route::post('/note/create', 'NoteController@store');
 
 Route::get('/note/show', 'NoteController@show');
 
@@ -35,15 +31,24 @@ Route::post('/note/{id}/update', 'NoteController@update');
 
 Route::get('/project/create', 'ProjectController@create');
 
-
-Route::get('/project/create', 'ProjectController@create');
-
 Route::post('/project/create', 'ProjectController@store');
 
-Route::get('/project/show', 'ProjectController@show');
+
+
+Route::get('/project', 'ProjectController@index');
+
+
+
+Route::get('/project/{id}', 'ProjectController@show');
 
 Route::get('/project/{id}/destroy', 'ProjectController@destroy');
 
 Route::get('/project/{id}/edit', 'ProjectController@edit');
 
 Route::post('/project/{id}/update', 'ProjectController@update');
+
+Route::get('/project/{id}/note/create', 'NoteController@create');
+
+Route::post('/project/{id}/note/store', 'NoteController@store');
+
+

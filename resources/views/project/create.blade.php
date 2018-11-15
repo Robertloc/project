@@ -7,7 +7,7 @@
 			<div class="col-md-8">
 				<div class="card">
 						<div class="card-body">
-								<h2>Create new Project</h2>
+	             <h2>Create new Project</h2>
 
 										<form action="{{ action('ProjectController@store') }}" method="post">
 
@@ -20,15 +20,14 @@
 											</div>
 
 
-											<div class="form-group">
-												<button type="submit">Create</button>
-											</div>
-						</div>
-				</div>
-			</div>
+		<div class="form-group">
+			<button type="submit">Create Project</button>
+		</div>
 	</div>
 </div>
-
+</div>
+</div>
+</div>
 	
 
 @endsection

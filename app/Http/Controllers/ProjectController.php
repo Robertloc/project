@@ -24,21 +24,26 @@ class ProjectController extends Controller
     {
         $this->validate($request, [
             'name'=> 'required|max:50'
+
         ]);
 
-        $project = Project::create($request->all());
-
+        $project = Project::create([
+            'name'=> $request->name,
+            'user_id'=> Auth::user()->id
+        
+        ]);
+    
        
-        return redirect(action('ProjectController@show'));
+        return redirect(action('ProjectController@show', $project->id));
     }
 
 
-    public function show()
+    public function index()
     {
         $projects = Project::get();
     
 
-        return view('project/show')->with(compact('projects'));
+        return view('project/index')->with(compact('projects'));
     }
 
     public function edit($id)
@@ -65,6 +70,14 @@ class ProjectController extends Controller
         Project::destroy($id);
           
     
-        return redirect(action('ProjectController@show'));
+        return redirect(action('ProjectController@index'));
+    }
+
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+
+        return view('project/show', ['project'=>$project]);
+
     }
 }
