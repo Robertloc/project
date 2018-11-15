@@ -27,14 +27,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
 
-    public function notes()
+    public function noteversions()
     {
         return $this->hasMany(Noteversion::class);
     }
 
-    public function project()
+    public function projects()
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 }

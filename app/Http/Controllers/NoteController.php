@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Noteversion;
 use App\Project;
+use App\Note;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -14,24 +15,36 @@ class NoteController extends Controller
 		return $this->middleware('auth');
     }
     
-    public function create()
+    public function create($id)
     { 
-    
-      return view('note/create');
+       $project = Project::findOrFail($id);
+
+      return view('note/create', ['project'=> $project]);
     }
 
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
             'name'=> 'required|max:50',
     		'text' => 'required'
         ]);
 
-        $note = Noteversion::create($request->all());
+        $note = Note::create([
+            'project_id'=>$id,
+            'name'=> $request->name,
+            'user_id'=> Auth::user()->id
+            
+        ]);
+
+        $noteversion= Noteversion::create ([
+            'note_id'=> $note->id,
+            'text'=>$request->text
+            
+        ]);
 
        
-        return redirect(action('NoteController@show'));
+        return redirect(action('ProjectController@show', $id));
     }
 
 

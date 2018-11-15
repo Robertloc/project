@@ -9,7 +9,7 @@
 									<div class="card-body">
 											<h2>create new note</h2>
 
-											<form action="{{ action('NoteController@store') }}" method="post">
+											<form action="{{ action('NoteController@store', $project->id) }}" method="post">
 										
 											 @csrf
 											<div class="form-group">
@@ -25,7 +25,7 @@
 
 
 											<div class="form-group">
-												<br><button type="submit">Create Note</button>
+												<button type="submit">Create</button>
 											</div>
 									</div>
 							</div>

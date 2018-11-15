@@ -16,10 +16,10 @@ class CreateNoteVersionsTable extends Migration
         Schema::create('note_versions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('note_id')->nullable();
-            $table->text('name');
+            $table->text('text');
             $table->integer('version')->nullable();
             $table->integer('user_id')->nullable();
-            $table->text('text');
+            
             $table->timestamps();
         });
     }
