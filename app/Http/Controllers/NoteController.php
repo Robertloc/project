@@ -83,10 +83,14 @@ class NoteController extends Controller
     }
 
     public function destroy($id)
+
     {
-         Noteversion::destroy($id);
-          
-    
-        return redirect(action('NoteController@show'));
+
+        $note = Note::findOrFail($id);
+        $project =  $note->project;
+
+        $note->delete();
+
+        return redirect(action('ProjectController@show', $project->id));
     }
 }

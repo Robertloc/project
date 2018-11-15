@@ -29,17 +29,12 @@
 
 <p>{{$note->noteversions()->orderBy('created_at', 'desc')->first()->text}}</p>
 
-{{-- <p>{{$note->user->name}}</p> --}}
+<p>{{$note->user->name}}</p>
 
-{{-- <a href="{{ action('NoteController@destroy', $note->noteversions)}}" class="btn btn-default bg-secondary">Delete</a>
-<a href="{{ action('NoteController@edit', $note->noteversions)}}" class="btn btn-default bg-secondary">Edit</a> --}}
+<a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-default bg-secondary">Delete</a>
+<a href="{{ action('NoteController@edit', $note->id)}}" class="btn btn-default bg-secondary">Edit</a>
 
 @endforeach
-
-
-
-
-
 
 
 
