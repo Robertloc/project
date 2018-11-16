@@ -54,22 +54,16 @@ class NoteController extends Controller
     {
         $noteversions = Noteversion::get();
         
-        
-        // $projects = $request->option;
-        // foreach($projects as $project)
-        // {
-           
-        // }
-
         return view('note/show')->with(compact('noteversions'));
     }
 
     public function edit($id)
     {
         $note = Note::findOrFail($id);
-        
+    
 
-        return view('note/edit', ['note' => $note]);
+        return view('note/edit', [
+            'note' => $note]);
     }
 
 
@@ -83,8 +77,7 @@ class NoteController extends Controller
             'user_id'=> Auth::user()->id
             
         ]);
-
-       
+  
         return redirect(action('ProjectController@show', $note->project->id));
     }
 

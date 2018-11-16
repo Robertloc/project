@@ -37,7 +37,6 @@ class ProjectController extends Controller
         return redirect(action('ProjectController@show', $project->id));
     }
 
-
     public function index()
     {
         $projects = Project::get();

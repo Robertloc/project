@@ -45,3 +45,8 @@ Route::get('/project/{id}/note/create', 'NoteController@create');
 Route::post('/project/{id}/note/store', 'NoteController@store');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('invite', 'InviteController@invite')->name('invite');
+Route::post('invite', 'InviteController@process')->name('process');
+
+Route::get('accept/{token}', 'InviteController@accept')->name('accept');

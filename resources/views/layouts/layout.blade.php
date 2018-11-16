@@ -36,11 +36,11 @@
                             <a  class="nav-link" href="{{ route('register') }}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Invite</a>
+                            <a class="nav-link" href="{{ route('invite') }}">Invite</a>
                         </li>
                         @else
                         <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Invite</a>
+                                <a class="nav-link" href="{{ route('invite') }}">Invite</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"></i>Logout</a>

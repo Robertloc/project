@@ -4,21 +4,17 @@
 
 <div class="container">
   <div class="row justify-content-center">
-      <div class="col-md">
-
-
-  <div>
-  <a href="{{ action('NoteController@show')}}">{{ $project->name }}</a>
+    <div class="col-md">
+      <div>
+        <a href="{{ action('ProjectController@index')}}">Go back to projects</a>
+      </div> 
+      <p>{{ $project->name }}</p>
+      <div>
+        <p>{{$project->user->name}}</p>
+      </div>
+      <a href="{{ action('NoteController@create', $project->id)}}">Create note</a>
+    </div>
   </div>
-  <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary">Delete</a>
-  <a href="{{ action('ProjectController@edit', $project->id)}}" class="btn btn-default bg-secondary">Edit</a>
-
-<p>{{$project->user->name}}</p>
-
-<a href="{{ action('NoteController@create', $project->id)}}">Create note</a>
-
-</div>
-</div>
 </div>
 
 
@@ -34,15 +30,25 @@
 <p>{{$note->created_at}}</p>
 
 
+<div>
+  <a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-danger btn-sm">Delete</a>
+</div>
 
-<a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-default bg-secondary">Delete</a>
-<a href="{{ action('NoteController@edit', $note->id)}}" class="btn btn-default bg-secondary">Edit</a>
+<div>
+  <a href="{{ action('NoteController@edit', $note->id)}}" class="btn btn-warning btn-sm">Edit</a>
+</div>
 
-<a href="{{ action('NoteController@history', $note->id)}}" class="btn btn-default bg-secondary">history</a>
+<div>
+  <a href="{{ action('NoteController@history', $note->id)}}" class="btn btn-dark btn-sm">History</a>
+</div>
 
 @endforeach
 
-
-
-
 @endsection
+
+{{-- 
+<script>
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+    });
+</script> --}}

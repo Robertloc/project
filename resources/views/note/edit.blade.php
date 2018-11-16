@@ -4,22 +4,20 @@
 @section('content')
 	<h1>Edit note</h1>
 
+	<div>
+		<a href="{{ URL::previous() }}">Go back to notes</a>
+	</div> 
+	
 	<form action="{{ action('NoteController@update', $note->id) }}" method="post">
 
 	 @csrf
 
-
-
-	    <div class="form-group">
-			<label for="text">Text</label>
-			<input type="text" name="text" class="form-control">
-		</div>
-
-
-		<div class="form-group">
-			<button type="submit">Edit Note</button>
-		</div>
-
-	
+	<div>
+		<label for="text">Text</label>
+		<input type="text" name="text">
+	</div>
+	<div>
+		<button type="submit">Edit Note</button>
+	</div>
 
 @endsection
