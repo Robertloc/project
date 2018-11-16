@@ -12,14 +12,11 @@
 */
 
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/about', 'about');
-
-
 
 Route::get('/note/show', 'NoteController@show');
 
@@ -48,5 +45,3 @@ Route::get('/project/{id}/note/create', 'NoteController@create');
 Route::post('/project/{id}/note/store', 'NoteController@store');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-
