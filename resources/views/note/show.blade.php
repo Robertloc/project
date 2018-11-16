@@ -18,4 +18,4 @@
   <a href="{{ action('NoteController@edit', $noteversion->id)}}" class="btn btn-default bg-secondary">Edit</a>
 
 @endforeach
-@endsection
+@endsection 
