@@ -33,12 +33,10 @@ Route::get('/project/{id}/note/create', 'NoteController@create');
 Route::post('/project/{id}/note/store', 'NoteController@store');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-<<<<<<< HEAD
 Route::get('invite', 'InviteController@invite')->name('invite');
 Route::post('invite', 'InviteController@process')->name('process');
 
 Route::get('accept/{token}', 'InviteController@accept')->name('accept');
-=======
 //My Password reset
 Route::get('/mypassword', 'MyPasswordController@reset');
 
@@ -46,4 +44,3 @@ Route::get('/mypassword', 'MyPasswordController@reset');
 Route::get('passwords/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('passwords/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
 Route::post('passwords/reset', 'Auth\ResetPasswordController@reset');
->>>>>>> resetfunction
