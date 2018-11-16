@@ -39,7 +39,9 @@ class NoteController extends Controller
 
         $noteversion= Noteversion::create ([
             'note_id'=> $note->id,
-            'text'=>$request->text
+            'text'=>$request->text,
+            'user_id'=> Auth::user()->id
+
             
         ]);
 
@@ -64,22 +66,26 @@ class NoteController extends Controller
 
     public function edit($id)
     {
-        $noteversions = Noteversion::findOrFail($id);
+        $note = Note::findOrFail($id);
+        
 
-        return view('note/edit', ['noteversions' => $noteversions]);
+        return view('note/edit', ['note' => $note]);
     }
 
 
     public function update(Request $request, $id=null)
     {
-        $noteversions = Noteversion::findOrFail($id);
+        $note = Note::findOrFail($id);
 
-        $noteversions->name = $request->input('name');
-        $noteversions->text = $request->input('text');
+        $noteversion= Noteversion::create ([
+            'note_id'=> $note->id,
+            'text'=>$request->text,
+            'user_id'=> Auth::user()->id
+            
+        ]);
 
-        $noteversions->save();
-
-        return redirect(action('NoteController@show', $id));
+       
+        return redirect(action('ProjectController@show', $note->project->id));
     }
 
     public function destroy($id)
@@ -92,5 +98,13 @@ class NoteController extends Controller
         $note->delete();
 
         return redirect(action('ProjectController@show', $project->id));
+    }
+
+    public function history($id)
+    {
+        $note = Note::findOrFail($id);
+        
+        return view('note/history', ['note' => $note]);
+
     }
 }

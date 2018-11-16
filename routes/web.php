@@ -15,7 +15,7 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::view('/about', 'about');
 
@@ -26,14 +26,14 @@ Route::get('/note/show', 'NoteController@show');
 Route::get('/note/{id}/destroy', 'NoteController@destroy');
 
 Route::get('/note/{id}/edit', 'NoteController@edit');
-
+Route::get('/note/{id}/history', 'NoteController@history');
 Route::post('/note/{id}/update', 'NoteController@update');
 
 Route::get('/project/create', 'ProjectController@create');
 
 Route::post('/project/create', 'ProjectController@store');
 
-Route::get('/project', 'ProjectController@index');
+Route::get('/', 'ProjectController@index');
 
 Route::get('/project/{id}', 'ProjectController@show');
 

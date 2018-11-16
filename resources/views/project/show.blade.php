@@ -31,8 +31,14 @@
 
 <p>{{$note->user->name}}</p>
 
+<p>{{$note->created_at}}</p>
+
+
+
 <a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-default bg-secondary">Delete</a>
 <a href="{{ action('NoteController@edit', $note->id)}}" class="btn btn-default bg-secondary">Edit</a>
+
+<a href="{{ action('NoteController@history', $note->id)}}" class="btn btn-default bg-secondary">history</a>
 
 @endforeach
 
