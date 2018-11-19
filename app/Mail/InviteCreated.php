@@ -31,6 +31,6 @@ class InviteCreated extends Mailable
         // return $this->view('view.name');
 
         return $this->from('you@example.com')
-        ->view('emails.invite');
+        ->view('emails.invite', ['invite' => $this->invite]);
     }
 }

@@ -1,15 +1,19 @@
 @extends('layouts.layout')
 
 @section('content')
-
-<form action="{{ route('invite') }}" method="post">
-    {{ csrf_field() }}
-    <input type="email" name="email" />
-    <button type="submit">Send invite</button>
-</form>
-
-<div>
-    <a href="{{ URL::previous() }}">Go back to projects</a>
-  </div> 
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md">
+              <div class="card">
+                  <h3>Email Address:</h3>
+                <form action="{{ route('invite') }}" method="post">
+                    {{ csrf_field() }}
+                <input type="email" name="email"><br>
+                    <br><button type="submit">Send invite</button>
+                </form>
+                <a href="{{ URL::previous() }}">Return to previous page</a>
+            </div>
+        </div>
+    </div>
 
 @endsection
