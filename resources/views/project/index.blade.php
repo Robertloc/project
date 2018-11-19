@@ -4,21 +4,16 @@
 @section('content')
 
 <div class="container">
-  <a href="{{ action('ProjectController@create')}}">Create project</a>
-</div>
-
-@foreach($projects as $project)
-<div>
-  <p>GO TO:</p><a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
-</div>
-  <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary">Delete</a>
-  <a href="{{ action('ProjectController@edit', $project->id)}}" class="btn btn-default bg-secondary">Edit</a>
-  
-<div>
-  <p>Created by:</p>
-  <p>{{$project->user->name}}</p>
-</div>
-
-@endforeach
+    <div class="row justify-content-center">
+        <div class="col-md">
+            <div class="card">
+          <a href="{{ action('ProjectController@create')}}">Create project</a>
+          @foreach($projects as $project)
+          GO TO:<a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
+          <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary">Delete</a>
+          <a href="{{ action('ProjectController@edit', $project->id)}}" class="btn btn-default bg-secondary">Edit</a>
+          Created by: {{$project->user->name}}<br>
+          @endforeach
+    </div>
 
 @endsection

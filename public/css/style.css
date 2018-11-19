@@ -52,6 +52,10 @@ html {
   border-radius: 25px;
 }
 
+.container-button {
+  justify-items: space-between;
+}
+
 .row {
   display: block;
 }

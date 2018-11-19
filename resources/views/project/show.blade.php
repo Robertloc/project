@@ -3,49 +3,32 @@
 @section('content')
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md">
-      <div>
-        <a href="{{ action('ProjectController@index')}}">Go back to projects</a>
+	<div class="row justify-content-center">
+			<div class="col-md-8">
+					<div class="card">
+            <h3>{{ $project->name }}</h3>
+            Project owner: {{$project->user->name}}
+            <a href="{{ action('ProjectController@index')}}">Return to Projects Dashboard</a>
+            <a href="{{ action('NoteController@create', $project->id)}}">Create New Project Note</a>
+          </div>
+          <br>  
+            @foreach ($project->notes as $note)
+            <div class="card"> 
+              Note Name: {{$note->name}}</p>
+              Text: {{$note->noteversions()->orderBy('created_at', 'desc')->first()->text}}</p>
+              Updated at: {{$note->created_at}}</p>
+              Updated by: {{$project->user->name}}</p>
+              <a href="{{ action('NoteController@destroy', $note->id)}}">Delete</a>
+              <a href="{{ action('NoteController@edit', $note->id)}}">Edit</a>
+              <a href="{{ action('NoteController@history', $note->id)}}">History</a>
+              </div>
+              </div>
+            <br>
+            @endforeach
+        </div>
       </div> 
-      <p>{{ $project->name }}</p>
-      <div>
-        <p>{{$project->user->name}}</p>
-      </div>
-      <a href="{{ action('NoteController@create', $project->id)}}">Create note</a>
     </div>
-  </div>
-</div>
-
-
-@foreach ($project->notes as $note)
-
-
-<p>{{$note->name}}</p>
-
-<p>{{$note->noteversions()->orderBy('created_at', 'desc')->first()->text}}</p>
-
-<p>{{$note->user->name}}</p>
-
-<p>{{$note->created_at}}</p>
-
-
-<div>
-  <a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-danger btn-sm">Delete</a>
-</div>
-
-<div>
-  <a href="{{ action('NoteController@edit', $note->id)}}" class="btn btn-warning btn-sm">Edit</a>
-</div>
-
-<div>
-  <a href="{{ action('NoteController@history', $note->id)}}" class="btn btn-dark btn-sm">History</a>
-</div>
-
-@endforeach
-
 @endsection
-
 {{-- 
 <script>
     $(".delete").on("submit", function(){
