@@ -20,7 +20,7 @@
 
 												<div class="form-group">
 												<label for="text">Text</label><br>
-												<textarea cols="100" rows="100" type="textarea" name="text" class="form-control"> </textarea>
+												<textarea cols="100" rows="15" type="textarea" name="text" class="form-control"> </textarea>
 											</div>
 
 
@@ -32,6 +32,6 @@
 					</div>
 				</div>
 
-	
+
 
 @endsection

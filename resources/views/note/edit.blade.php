@@ -14,10 +14,10 @@
 	        @csrf
 	        <div class="form-group">
 	          <label for="text">Text</label>
-	          <textarea cols="100" rows="100" type="text" name="text" class="form-control">
+	          <textarea cols="100" rows="15" type="text" name="text" class="form-control">
 								@foreach($note->noteversions as $noteversion)
 
-								<p>{{$noteversion->text}}</p>
+								{{$noteversion->text}}
 							
 								@endforeach
 
@@ -31,6 +31,4 @@
 	  </div>
 	</div>
 </div>
-
-@endsection
 
