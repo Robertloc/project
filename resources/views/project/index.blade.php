@@ -6,19 +6,27 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md">
-            <div class="card">
-          <a href="{{ action('ProjectController@create')}}">Create project</a>
+          <div class="card">
+            <h3><a href="{{ action('ProjectController@create')}}">Create project</a></h3>
+          </div> 
+          <br>
           @foreach($projects as $project)
-          GO TO:<a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
-          <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary" onclick="return myFunction()">Delete</a>
-          <a href="{{ action('ProjectController@edit', $project->id)}}" class="btn btn-default bg-secondary">Edit</a>
-          Created by: {{$project->user->name}}<br>
+            <div class="card">
+              <a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
+              Created by: {{$project->user->name}}<br>
+              <a href="{{ action('ProjectController@destroy', $project->id)}}" onclick="return myFunction()">Delete</a>
+              <a href="{{ action('ProjectController@edit', $project->id)}}">Edit</a>
+            </div>
+            <br>
           @endforeach
+        </div>
+      </div>
     </div>
-    <script>
+  
+  <script>
         function myFunction() {
-            if(!confirm("Are You Sure to delete this"))
+            if(!confirm("Are you sure you want to delete this project?"))
             event.preventDefault();
         }
-    </script>
+  </script>
 @endsection

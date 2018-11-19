@@ -33,7 +33,7 @@
 
 <script>
     function myFunction() {
-        if(!confirm("Are You Sure to delete this"))
+        if(!confirm("Are you sure you want to delete this note?"))
         event.preventDefault();
     }
 </script>
