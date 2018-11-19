@@ -29,8 +29,10 @@ Route::get('/project/{id}', 'ProjectController@show');
 Route::get('/project/{id}/destroy', 'ProjectController@destroy');
 Route::get('/project/{id}/edit', 'ProjectController@edit');
 Route::post('/project/{id}/update', 'ProjectController@update');
+
 Route::get('/project/{id}/note/create', 'NoteController@create');
 Route::post('/project/{id}/note/store', 'NoteController@store');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('invite', 'InviteController@invite')->name('invite');
@@ -44,3 +46,5 @@ Route::get('/mypassword', 'MyPasswordController@reset');
 Route::get('passwords/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('passwords/email', 'Auth\ResetPasswordController@sendResetLinkEmail');
 Route::post('passwords/reset', 'Auth\ResetPasswordController@reset');
+
+

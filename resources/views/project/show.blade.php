@@ -31,8 +31,15 @@
 
 
 <div>
-  <a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-danger btn-sm">Delete</a>
+  <a href="{{ action('NoteController@destroy', $note->id)}}" class="btn btn-danger btn-sm" onclick="return myFunction()">Delete</a>
 </div>
+
+<script>
+    function myFunction() {
+        if(!confirm("Are You Sure to delete this"))
+        event.preventDefault();
+    }
+</script>
 
 <div>
   <a href="{{ action('NoteController@edit', $note->id)}}" class="btn btn-warning btn-sm">Edit</a>
@@ -46,9 +53,3 @@
 
 @endsection
 
-{{-- 
-<script>
-    $(".delete").on("submit", function(){
-        return confirm("Are you sure?");
-    });
-</script> --}}

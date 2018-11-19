@@ -77,6 +77,8 @@ class NoteController extends Controller
             'user_id'=> Auth::user()->id
             
         ]);
+
+        
   
         return redirect(action('ProjectController@show', $note->project->id));
     }

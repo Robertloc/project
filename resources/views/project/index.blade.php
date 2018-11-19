@@ -11,7 +11,7 @@
 <div>
   <p>GO TO:</p><a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
 </div>
-  <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary">Delete</a>
+  <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary" onclick="return confirm('Are you sure?')" >Delete</a>
   <a href="{{ action('ProjectController@edit', $project->id)}}" class="btn btn-default bg-secondary">Edit</a>
   
 <div>
