@@ -20,7 +20,7 @@
 
 												<div class="form-group">
 												<label for="text">Text</label><br>
-												<input type="textarea" name="text" class="form-control">
+												<textarea cols="100" rows="100" type="textarea" name="text" class="form-control"> </textarea>
 											</div>
 
 

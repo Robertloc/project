@@ -18,7 +18,7 @@
               Text: {{$note->noteversions()->orderBy('created_at', 'desc')->first()->text}}</p>
               Updated at: {{$note->created_at}}</p>
               Updated by: {{$project->user->name}}</p>
-              <a href="{{ action('NoteController@destroy', $note->id)}}">Delete</a>
+              <a href="{{ action('NoteController@destroy', $note->id)}}" onclick="return myFunction()">Delete</a>
               <a href="{{ action('NoteController@edit', $note->id)}}">Edit</a>
               <a href="{{ action('NoteController@history', $note->id)}}">History</a>
               </div>
@@ -28,10 +28,14 @@
         </div>
       </div> 
     </div>
-@endsection
-{{-- 
+  </div>
+</div>
+
 <script>
-    $(".delete").on("submit", function(){
-        return confirm("Are you sure?");
-    });
-</script> --}}
+    function myFunction() {
+        if(!confirm("Are You Sure to delete this"))
+        event.preventDefault();
+    }
+</script>
+
+@endsection

@@ -10,10 +10,15 @@
           <a href="{{ action('ProjectController@create')}}">Create project</a>
           @foreach($projects as $project)
           GO TO:<a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
-          <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary">Delete</a>
+          <a href="{{ action('ProjectController@destroy', $project->id)}}" class="btn btn-default bg-secondary" onclick="return myFunction()">Delete</a>
           <a href="{{ action('ProjectController@edit', $project->id)}}" class="btn btn-default bg-secondary">Edit</a>
           Created by: {{$project->user->name}}<br>
           @endforeach
     </div>
-
+    <script>
+        function myFunction() {
+            if(!confirm("Are You Sure to delete this"))
+            event.preventDefault();
+        }
+    </script>
 @endsection

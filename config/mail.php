@@ -15,6 +15,20 @@
     "pretend" => false
   );
 
+return array(
+    "driver" => "smtp",
+    "host" => "smtp.mailtrap.io",
+    "port" => 2525,
+    "from" => array(
+        "address" => "from@example.com",
+        "name" => "Example"
+    ),
+    "username" => "a5182ece4e1027",
+    "password" => "40f736891dae2a",
+    "sendmail" => "/usr/sbin/sendmail -bs",
+    "pretend" => false
+  );
+
 return [
 
     /*
