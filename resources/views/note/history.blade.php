@@ -1,20 +1,25 @@
 @extends('layouts.layout')
 
 @section('content')
+<div class="container">
+		<div class="row justify-content-center">
+				<div class="col-md-8" id="divContainer">
+					@foreach($note->noteversions as $noteversion)
+						<div class="card">
+							<div class="card-body">
+								<h3>{{$note->name}}</h3>
+								Text: {{$noteversion->text}}<br>
+								Last edit by: {{$noteversion->user->name}}<br>
+								Updated at: {{$noteversion->updated_at}}<br>
+								<a href="{{ URL::previous() }}">Return to Project</a>
+							</div>
+						</div>
+					@endforeach
+				</div>
+		</div>
+	</div>
+</div>
 
-<h1>{{$note->name}}</h1>
 
-<h3>{{$note->user->name}}</h3>
-
-<div>
-	<a href="{{ URL::previous() }}">Go back to notes</a>
-</div> 
-
-@foreach($note->noteversions as $noteversion)
-
-<p>{{$noteversion->text}}</p>
-<h3>{{$noteversion->user->name}}</h3>
-
-@endforeach
-
+	
 @endsection
