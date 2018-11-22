@@ -1,5 +1,3 @@
-<p>Hi,</p>
+<p>Hello,</p>
 
-<p>Someone has invited you to access their account.</p>
-
-<a href="{{ route('accept', $invite->token) }}">Click here</a> to activate!
+<p>Someone has invited you to the Collaborate App. Please <a href="{{ route('accept', $invite->token) }}">Click here</a> to activate!</p>

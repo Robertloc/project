@@ -6,7 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md">
             <div class="card">
-                <h2 class="login">{{ __('Start Collaborating') }}</h2><br>
+                <div class="card-header">
+                <h3>{{ __('Start Collaborating') }}</h3>
+                </div>
+                <div class="card-body">
                     <form method="POST" action="{{ route('login') }}"><br>
                         @csrf
                         <div class="form-group row">
@@ -47,10 +50,11 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}"><br>
+                                <a class="btn btn-link" href="{{ route('password.request') }}" id="edit"><br>
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

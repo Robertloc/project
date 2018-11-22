@@ -5,29 +5,30 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md">
-          <div class="card">
-            <h3><a href="{{ action('ProjectController@create')}}">Create project</a></h3>
-          </div> 
-          <br>
+      <h3><a href="{{ action('ProjectController@create')}}">Create project</a></h3>
+        <div class="col-sm-6">
           <div id="divContainer">
           @foreach($projects as $project)
             <div class="card">
-              <a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a>
-              Created by: {{$project->user->name}}<br>
+            <div class="card-header">
+              <h5><a href="{{ action('ProjectController@show', $project->id)}}">{{ $project->name }}</a></h5>
+            </div>
+              <div class="card-body">
               <div class="container">
                 <div class="row justify-content-space-between">
-                  <a href="{{ action('ProjectController@destroy', $project->id)}}" onclick="return myFunction()">Delete</a>
+                  <a href="{{ action('ProjectController@destroy', $project->id)}}" onclick="return myFunction()" id="delete">Delete</a>
                   &bull;
-                  <a href="{{ action('ProjectController@edit', $project->id)}}">Edit</a>
-              </div>
+                  <a href="{{ action('ProjectController@edit', $project->id)}}" id="edit">Edit</a><br>
+                  <span id="created">Created by: {{$project->user->name}}</span>
+                </div>
             </div>
           </div>
-            <br>
+        </div>
           @endforeach
         </div>
       </div>
     </div>
+  </div>
   
 @endsection
 
@@ -47,7 +48,19 @@
              let id = $(children[i]).data('id');
              order.push(id);
            }
-           //ajax
+
+           $.ajax({
+            method: 'get',
+            url: "index.blade.php",
+            success: function(data, status) {
+              let id = data.data.channel.item;
+
+                id.forEach(function(id) {
+
+                    document.getElementById('divContainer').append(id);
+                });
+    }
+});
 				 }
 			 }); });
 		 });

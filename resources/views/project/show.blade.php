@@ -4,12 +4,14 @@
 
 <div class="container">
 	<div class="row justify-content-center">
-			<div class="col-md-8">
+			<div class="col-sm-6">
 					<div class="card">
+            <div class="card-header">
             <h3>{{ $project->name }}</h3>
-            Project owner: {{$project->user->name}}
-            <a href="{{ action('ProjectController@index')}}">Return to Projects Dashboard</a>
-            <a href="{{ action('NoteController@create', $project->id)}}">Create New Project Note</a>
+            <span id="created">Project owner: {{$project->user->name}}</span>
+            </div>
+            <a href="{{ action('ProjectController@index')}}" id="edit">Return to Projects Dashboard</a>
+            <a href="{{ action('NoteController@create', $project->id)}}" id="edit">Create New Project Note</a>
           </div>
       </div>
     </div>
@@ -18,17 +20,19 @@
           <div id="divContainer">
             @foreach ($project->notes as $note)
             <div class="card" data-id="{{ $note->id }}">
-              Name: {{$note->name}}</p>
-              Text: {{$note->noteversions()->orderBy('created_at', 'desc')->first()->text}}</p>
+              <div class="card-header">
+              <h5>{{$note->name}}</h5>
+              </div>
+              {{$note->noteversions()->orderBy('created_at', 'desc')->first()->text}}</p>
               {{-- Created at: {{$note->created_at}}</p> --}}
               {{-- Updated by: {{$project->user->name}}</p> --}}
-              <div class="container">
+              <div class="card-footer">
                   <div class="row justify-content-center">
-                    <a href="{{ action('NoteController@destroy', $note->id)}}" onclick="return myFunction()">Delete</a>
+                    <a href="{{ action('NoteController@destroy', $note->id)}}" onclick="return myFunction()" id="delete">Delete</a>
                     &bull;
-                    <a href="{{ action('NoteController@edit', $note->id)}}">Edit</a>
+                    <a href="{{ action('NoteController@edit', $note->id)}}" id="edit">Edit</a>
                     &bull;
-                    <a href="{{ action('NoteController@history', $note->id)}}">History</a>
+                    <a href="{{ action('NoteController@history', $note->id)}}"" id="history">History</a>
                   </div>
               </div>
             </div>
@@ -54,6 +58,7 @@
              order.push(id);
            }
            //ajax
+
 				 }
 			 }); });
 		 });

@@ -6,27 +6,23 @@
 			<div class="row justify-content-center">
 					<div class="col-md-8">
 							<div class="card">
+								<div class="card-header">
+									<h3>create new note</h3>
+								</div>
 									<div class="card-body">
-											<h2>create new note</h2>
-
 											<form action="{{ action('NoteController@store', $project->id) }}" method="post">
 										
 											 @csrf
 											<div class="form-group">
-												<label for="name">Name</label><br>
-												<input type="text" name="name" class="form-control">
+												<input type="text" name="name" class="form-control" placeholder="Name...">
 											</div>
-
-
 												<div class="form-group">
-												<label for="text">Text</label><br>
-												<textarea cols="100" rows="15" type="textarea" name="text" class="form-control"> </textarea>
+												<textarea cols="100" rows="10" type="textarea" name="text" class="form-control" placeholder="Details..."></textarea>
 											</div>
-
-
 											<div class="form-group">
 												<button type="submit">Create</button>
 											</div>
+											<a href="{{ URL::previous() }}" id="edit">Return to Project</a>
 									</div>
 							</div>
 					</div>

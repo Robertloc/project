@@ -6,7 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md">
             <div class="card">
-                        <h2 class="login">{{ __('Register') }}</h2><br>
+                <div class="card-header">
+                        <h3>{{ __('Register') }}</h3>
+                </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

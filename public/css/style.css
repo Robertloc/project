@@ -46,7 +46,6 @@ html {
   border: 5px solid #1C90F6;
   width: 300px;
   height: auto;
-  padding: 1.25em;
   background-color: transparent;
   text-align: center;
   border-radius: 25px;
@@ -72,6 +71,19 @@ h2{
 
 h3 {
   font-size: 1.25em;
+  font-weight: 700;
+  font-style: oblique;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.25em;
+  font-weight: 700;
+  font-style: oblique;
+}
+
+h5 {
+  font-size: 1em;
   font-weight: 700;
   font-style: oblique;
 }
@@ -132,4 +144,12 @@ a:-webkit-any-link:hover {
   color: white;
   transition: all 1s ease-in-out;
   text-decoration: none;
+}
+
+#created {
+  font-size: .8em;
+}
+
+#edit, #delete, #history {
+  font-weight: 900;
 }
