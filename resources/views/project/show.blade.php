@@ -57,7 +57,17 @@
              let id = $(children[i]).data('id');
              order.push(id);
            }
-           //ajax
+           $.ajax({
+             type: 'POST',
+             url: 'project/show{id}',
+             data: $(this).sortable('serialize'),
+            success: function(data) {
+               alert(data.success);
+             },
+             error: function() {
+               alert('error...');
+             }
+           });
 
 				 }
 			 }); });
